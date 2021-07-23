@@ -21,9 +21,11 @@ const setCount = ({ count } = {}) => ({
     count
 });
 
-// Redux store
+// Reducers:
+// 1. Reducers are pure functions
+// 2. Never change state or action
 
-const store = createStore((state = { count: 0 }, action) => {
+const countReducer = (state = { count: 0 }, action) => {
     switch (action.type) {
         case 'INCREMENT':
             return {
@@ -44,7 +46,11 @@ const store = createStore((state = { count: 0 }, action) => {
         default:
             return state;
     }
-});
+};
+
+// Redux store
+
+const store = createStore(countReducer);
 
 // Watch the changes
 
