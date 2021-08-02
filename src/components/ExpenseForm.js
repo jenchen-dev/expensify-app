@@ -101,6 +101,7 @@ export default class ExpenseForm extends React.Component {
                         numberOfMonths={1}
                         isOutsideRange={() => false}
                         renderMonthElement={this.renderMonthElement}
+                        id="expense_date_picker"
                     />
                     <textarea
                         placeholder="Add a note for your expense (optional)"
