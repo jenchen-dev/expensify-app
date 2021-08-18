@@ -51,29 +51,6 @@ export default class ExpenseForm extends React.Component {
             });
         }
     };
-    renderMonthElement = ({ month, onMonthSelect, onYearSelect }) =>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div>
-                <select
-                    value={month.month()}
-                    onChange={(e) => { onMonthSelect(month, e.target.value); }}
-                >
-                    {moment.months().map((label, value) => (
-                        <option value={value}>{label}</option>
-                    ))}
-                </select>
-            </div>
-            <div>
-                <select
-                    value={month.year()}
-                    onChange={(e) => { onYearSelect(month, e.target.value); }}
-                >
-                    <option value={moment().year() - 1}>Last year</option>
-                    <option value={moment().year()}>{moment().year()}</option>
-                    <option value={moment().year() + 1}>Next year</option>
-                </select>
-            </div>
-        </div>
     render() {
         return (
             <div>
@@ -99,7 +76,6 @@ export default class ExpenseForm extends React.Component {
                         onFocusChange={this.onFocusChange}
                         numberOfMonths={1}
                         isOutsideRange={() => false}
-                        renderMonthElement={this.renderMonthElement}
                         id="expense_date_picker"
                     />
                     <textarea
