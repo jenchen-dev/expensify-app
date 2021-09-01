@@ -15,19 +15,4 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
-    name: 'Jean Chen',
-    age: 27,
-    isSingle: true,
-    location: {
-        city: 'Taipei',
-        country: 'Taiwan'
-    },
-});
-
-database.ref('age').set(30);
-database.ref('location/city').set('Hualian');
-database.ref('attributes').set({
-    height: 155,
-    weight: 43
-});
+export { firebase, database as default };
