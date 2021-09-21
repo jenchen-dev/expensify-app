@@ -103,6 +103,7 @@ dist
 # TernJS port file
 .tern-port
 
+# Env and production mode
 public/dist/
 .env.test
 .env.development
