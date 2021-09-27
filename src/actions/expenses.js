@@ -8,7 +8,8 @@ export const addExpense = (expense) => ({
 });
 
 export const startAddExpense = (expenseData = {}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const {
             description = '',
             note = '',
@@ -17,7 +18,7 @@ export const startAddExpense = (expenseData = {}) => {
         } = expenseData;
         const expense = { description, note, amount, createdAt };
         
-        return database.ref('expenseList')
+        return database.ref(`users/${uid}/expenseList`)
             .push(expense)
             .then((ref) => {
                 dispatch(addExpense({
@@ -35,8 +36,9 @@ export const removeExpense = ({ id } = {}) => ({
 });
 
 export const startRemoveExpense = ({ id } = {}) => {
-    return (dispatch) => {
-        return database.ref(`expenseList/${id}`).remove().then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenseList/${id}`).remove().then(() => {
             dispatch(removeExpense({ id }));
         });
     };
@@ -50,8 +52,9 @@ export const editExpense = (id, updates) => ({
 });
 
 export const startEditExpense = (id, updates) => {
-    return (dispatch) => {
-        return database.ref(`expenseList/${id}`).update(updates).then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenseList/${id}`).update(updates).then(() => {
             dispatch(editExpense(id, updates));
         });
     };
@@ -64,8 +67,9 @@ export const setExpenses = (expenses) => ({
 });
 
 export const startSetExpenses = () => {
-    return (dispatch) => {
-        return database.ref('expenseList').once('value').then((snapshot) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenseList`).once('value').then((snapshot) => {
             const expenses = [];
 
             snapshot.forEach((childSnapshot) => {
