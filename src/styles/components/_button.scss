@@ -1,11 +1,18 @@
-.login-button {
+.button {
     color: white;
     background: $light-blue;
     border: none;
+    display: inline-block;
     padding: $s-size;
     font-weight: 300;
+    line-height: 1;
+    text-decoration: none;
 }
 
-.login-button:hover {
+.button:hover {
     transform: scale(1.05);
+}
+
+.button--link {
+    background: none;
 }
