@@ -16,3 +16,12 @@
 .button--link {
     background: none;
 }
+
+.button--secondary {
+    background: #888;
+    margin-bottom: $l-size;
+}
+
+.button--secondary:hover {
+    transform: none;
+}

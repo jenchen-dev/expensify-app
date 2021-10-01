@@ -1,0 +1,25 @@
+.text-input {
+    border: 1px solid #cacccd;
+    height: 45px;
+    padding: $s-size;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.text-input:focus {
+    outline-color: $light-blue;
+}
+
+.text-input__error {
+    @extend .text-input;
+    border-color: red;
+}
+
+.select {
+    @extend .text-input;
+}
+
+.textarea {
+    @extend .text-input;
+    height: 10rem;
+}
