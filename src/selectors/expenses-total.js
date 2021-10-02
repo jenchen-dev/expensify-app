@@ -1,5 +1,3 @@
-import React from 'react';
-
 const selectExpensesTotal = (expenses) => {
     if (expenses.length === 0) {
         return 0;
