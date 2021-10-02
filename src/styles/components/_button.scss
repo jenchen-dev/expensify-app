@@ -3,14 +3,14 @@
     background: $light-blue;
     border: none;
     display: inline-block;
+    margin-right: $s-size;
     padding: $s-size;
     font-weight: 300;
     line-height: 1;
     text-decoration: none;
-}
-
-.button:hover {
-    transform: scale(1.05);
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .button--link {
@@ -19,9 +19,15 @@
 
 .button--secondary {
     background: #888;
-    margin-bottom: $l-size;
+    &:hover {
+        transform: none;
+        background: rgba(136, 136, 136, 0.719);
+    }
 }
 
-.button--secondary:hover {
-    transform: none;
+.delete-button {
+    background: lighten($light-blue, 30%);
+    border: 1px solid darken($off-white, 20%);
+    border-top: none;
+    border-right: none;
 }

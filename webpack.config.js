@@ -20,7 +20,8 @@ module.exports = (env, argv) => {
             filename: 'bundle.js'
         },
         module: {
-            rules: [{
+            rules: [
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
@@ -30,7 +31,8 @@ module.exports = (env, argv) => {
                         plugins: ['@babel/plugin-proposal-class-properties']
                     }
                 }
-            }, {
+            },
+            {
                 test: /\.s?css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -48,7 +50,19 @@ module.exports = (env, argv) => {
                         }
                     }
                 ]
-            }]
+            },
+            { 
+                test: /\.(png|jpg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                        }
+                    }
+                ]
+            }
+        ]
         },
         plugins: [
             new MiniCssExtractPlugin({ 
