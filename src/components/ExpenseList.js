@@ -2,13 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseListItem from './ExpenseListItem';
 import selectExpenses from '../selectors/expenses';
-import moneyImg from '../../public/images/money.png';
 
 export const ExpenseList = (props) => (
     <div className="content-container">
         <div className="list">
             <div className="icon">
-                <img src={moneyImg} width="30" height="30"/>
+                <img src="/images/money.png" width="30" height="30"/>
             </div>
             <h3 className="list-title">My Expense List</h3>
         </div>

@@ -1,18 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseListItem when edit 1`] = `
-<div>
+<div
+  className="list-item-container"
+>
+  <button
+    className="delete-button"
+  >
+    <img
+      height="20"
+      src="/images/delete.png"
+      width="20"
+    />
+  </button>
   <Link
+    className="list-item"
     to="/edit/2"
   >
-    <h3>
-      Rent
+    <div>
+      <h3
+        className="list-item__title"
+      >
+        Rent
+      </h3>
+      <span
+        className="list-item__sub-title"
+      >
+        1969-12-28
+      </span>
+    </div>
+    <h3
+      className="list-item__data"
+    >
+      $5,500.00
     </h3>
   </Link>
-  <p>
-    $5,500.00
-    -
-    1969-12-28
-  </p>
 </div>
 `;

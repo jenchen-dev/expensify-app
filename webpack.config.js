@@ -50,17 +50,6 @@ module.exports = (env, argv) => {
                         }
                     }
                 ]
-            },
-            { 
-                test: /\.(png|jpg)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192,
-                        }
-                    }
-                ]
             }
         ]
         },

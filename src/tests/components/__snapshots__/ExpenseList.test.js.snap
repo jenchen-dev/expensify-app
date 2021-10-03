@@ -1,44 +1,128 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseList with empty message if no expenses 1`] = `
-<div>
-  <h1>
-    Expense List
-  </h1>
-  <p>
-    No expenses
-  </p>
+<div
+  className="content-container"
+>
+  <div
+    className="list"
+  >
+    <div
+      className="icon"
+    >
+      <img
+        height="30"
+        src="/images/money.png"
+        width="30"
+      />
+    </div>
+    <h3
+      className="list-title"
+    >
+      My Expense List
+    </h3>
+  </div>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-wider-screen"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-wider-screen"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <div
+      className="list-item list-item--message"
+    >
+      <span>
+        No expenses
+      </span>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`should render ExpenseList with expenses 1`] = `
-<div>
-  <h1>
-    Expense List
-  </h1>
-  <ExpenseListItem
-    amount={100}
-    createdAt={0}
-    description="Candy"
-    id="1"
-    key="1"
-    note=""
-  />
-  <ExpenseListItem
-    amount={5500}
-    createdAt={-345600000}
-    description="Rent"
-    id="2"
-    key="2"
-    note=""
-  />
-  <ExpenseListItem
-    amount={450}
-    createdAt={345600000}
-    description="Credit Card"
-    id="3"
-    key="3"
-    note=""
-  />
+<div
+  className="content-container"
+>
+  <div
+    className="list"
+  >
+    <div
+      className="icon"
+    >
+      <img
+        height="30"
+        src="/images/money.png"
+        width="30"
+      />
+    </div>
+    <h3
+      className="list-title"
+    >
+      My Expense List
+    </h3>
+  </div>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-wider-screen"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-wider-screen"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <ExpenseListItem
+      amount={100}
+      createdAt={0}
+      description="Candy"
+      id="1"
+      key="1"
+      note=""
+    />
+    <ExpenseListItem
+      amount={5500}
+      createdAt={-345600000}
+      description="Rent"
+      id="2"
+      key="2"
+      note=""
+    />
+    <ExpenseListItem
+      amount={450}
+      createdAt={345600000}
+      description="Credit Card"
+      id="3"
+      key="3"
+      note=""
+    />
+  </div>
 </div>
 `;

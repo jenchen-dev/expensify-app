@@ -2,12 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import numeral from 'numeral';
-import deleteBtn from '../../public/images/delete-2.png';
 
 const ExpenseListItem = ({ id, description, amount, createdAt }) => (
     <div className="list-item-container">
         <button className="delete-button">
-            <img src={deleteBtn} width="20" height="20"/>
+            <img src="/images/delete.png" width="20" height="20"/>
         </button>
         <Link className="list-item" to={`/edit/${id}`}>
             <div>
